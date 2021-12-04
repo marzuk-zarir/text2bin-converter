@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./src/style.css" />
+        <script src="./src/main.js" type="module"></script>
+        <title>Text - Binary Converter</title>
+    </head>
+    <body>
+        <div class="container">
+            <div
+                class="mt-5 mx-auto bg-light p-4 rounded-3"
+                style="max-width: 600px"
+            >
+                <h1 class="h2 fw-normal text-primary text-center">
+                    Text to Binary converter
+                </h1>
+                <div class="mt-4 mx-auto" x-data="converter">
+                    <textarea
+                        class="form-control bg-light"
+                        style="height: 200px"
+                        placeholder="Enter your text"
+                        x-model.debounce.500="text"
+                    ></textarea>
+                    <textarea
+                        class="form-control bg-light my-4"
+                        style="height: 200px"
+                        placeholder="Binary format"
+                        x-model.debounce.500="bytes"
+                        x-bind:class="{'is-invalid': error}"
+                    ></textarea>
+                    <div class="d-flex align-items-center justify-content-end">
+                        <p class="text-danger mb-0" x-show="error" x-cloak>
+                            Invalid input value
+                        </p>
+                        <button
+                            class="btn btn-sm btn-warning ms-2"
+                            @click="handleReset()"
+                        >
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
