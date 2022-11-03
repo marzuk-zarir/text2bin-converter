@@ -8,7 +8,7 @@
         <script src="./src/main.js" type="module"></script>
         <title>Text - Binary Converter</title>
     </head>
-    <body>
+    <body class="bg-light">
         <div class="container">
             <div
                 class="mt-5 mx-auto bg-light p-4 rounded-3"
@@ -19,7 +19,7 @@
                 </h1>
                 <div class="mt-4 mx-auto" x-data="converter">
                     <textarea
-                        class="form-control bg-light"
+                        class="form-control"
                         style="height: 200px"
                         placeholder="Enter your text"
                         x-model.debounce.500="text"
